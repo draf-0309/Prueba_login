@@ -7,7 +7,7 @@ namespace Prueba_login.Test
     public class Tests
     {
 
-        public IWebDriver driver = new ChromeDriver();
+        public IWebDriver driver;
         public LoginPage login;
 
         [SetUp]
@@ -16,6 +16,7 @@ namespace Prueba_login.Test
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/login");
 
+            driver = new ChromeDriver();
             login = new LoginPage(driver);
         }
 
